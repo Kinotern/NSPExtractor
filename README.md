@@ -1,0 +1,2 @@
+# NSPExtractor
+可以将NSP的nca解包为一些二进制文件用语研究
