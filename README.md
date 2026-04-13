@@ -2,8 +2,8 @@
 
 ## 概述
 
-本工具链实现了 Nintendo Switch NSP 文件的自动化解包与资源提取全流程。  
-从 NSP 分发包到最终可浏览的图片、可读的脚本字节码，覆盖完整的五阶段提取管线。
+本工具链实现了 NOOOOOdo Switch NSP 文件的自动化解包与资源提取全流程。  
+从 NSP 分发包到最终可浏览的图片、可读的脚本字节码，覆盖完整阶段提取管线。
 
 ## 提取管线
 
@@ -16,9 +16,9 @@ NSP 文件
   │
   ├─[Stage 3] RomFS → PSB 归档提取 (PsbDecompile info-psb)  [中间步骤，不保留]
   │
-  ├─[Stage 4] PSB 图片 → PNG (PsbDecompile image)
+  ├─[Stage 4] 恢复.M图片 →PSB.m文件 
   │
-  └─[Stage 5] .nut.m 脚本 → 字节码转储 (dump_nut_bytecode.py)
+  └─[Stage 5] .nut.m 脚本 → 字节码转储 (dump_nut_bytecode.py)待完成？
 ```
 
 ## 目录结构
@@ -37,7 +37,6 @@ NSP 文件
 │   ├── nsp_extract.py      # NSP → NCA 提取
 │   ├── nca_decrypt.py      # NCA 解密
 │   ├── psb_extract.py      # PSB 归档提取
-│   ├── image_extract.py    # 图片提取
 │   ├── script_dump.py      # 脚本字节码转储
 │   └── metadata.py         # 元数据生成与文件分类
 ├── tools/                  # 工具 (setup.py 自动复制)
@@ -60,7 +59,7 @@ out/
     ├── nca/                # 提取的原始 NCA 文件
     ├── exefs/              # 可执行文件系统 (main, rtld, sdk 等)
     ├── romfs/              # ROM 文件系统 (原始资源)
-    ├── images/             # 转换后的 PNG 图片
+    ├── images/             # 提取的 PNG 图片
     ├── scripts/            # 转储的字节码 (.txt + .json)
     └── metadata.json       # 提取元数据报告
 ```
