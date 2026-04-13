@@ -211,7 +211,7 @@ python nsp_toolkit.py --folder . --stages image
 
 ## 注意事项
 
-1. **密钥安全**：`prod.keys` 和 `title.keys` 包含敏感信息，请勿公开分享
+1. **密钥安全**：`prod.keys` 和 `title.keys` 反正这个key不是我的，网站下的所以放心哦
 2. **磁盘空间**：NSP 解包后可能占用数倍原始文件大小的空间
 3. **prod.keys 格式**：某些密钥文件可能包含尾部多余的 `00`，使用 `--fix-keys` 自动修复
 4. **Patch RomFS**：更新包的 RomFS 是增量补丁，需要与 base 合并才能得到完整内容
